@@ -32,13 +32,13 @@ const OptionMenu = ({ setRenameChat, chatId, refreshConversations, setIsOptionme
   const deleteSavedChats = async () => {
     console.log(chatId)
     try {
-      const deletChatRes = await fetch(`http://localhost:5000/api/chats/${chatId}`, {
+      const deletChatRes = await fetch(`https://f-chatbot-backend.onrender.com/api/chats/${chatId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
       });
-      const deleteTitleRes = await fetch(`http://localhost:5000/api/chat-titles/${chatId}`, {
+      const deleteTitleRes = await fetch(`https://f-chatbot-backend.onrender.com/api/chat-titles/${chatId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -96,7 +96,7 @@ const Rename = ({ chatTitle, chatId, setRenameChat, refreshConversations }) => {
   };
   const handleRename = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/chat-titles`, {
+      const res = await fetch(`https://f-chatbot-backend.onrender.com/api/chat-titles`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -162,7 +162,7 @@ const SavedChatsSection = () => {
   // console.log(renameChat)
   const getSavedConversations = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/chat-titles`, {
+      const res = await fetch(`https://f-chatbot-backend.onrender.com/api/chat-titles`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
         },

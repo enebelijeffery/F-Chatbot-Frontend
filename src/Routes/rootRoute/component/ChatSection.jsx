@@ -11,7 +11,7 @@ const ChatSection = () => {
 
   const getConversationHistory = async (selectedChatId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/chats/${selectedChatId}`, {
+      const res = await fetch(`https://f-chatbot-backend.onrender.com/api/chats/${selectedChatId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -41,7 +41,7 @@ const ChatSection = () => {
       setInput("");
 
       try {
-        const res = await fetch("http://localhost:5000/api/chats", {
+        const res = await fetch("https://f-chatbot-backend.onrender.com/api/chats", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

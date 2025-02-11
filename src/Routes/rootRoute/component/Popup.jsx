@@ -11,7 +11,7 @@ const Popup =()=>{
     const [newConversationTidtle, setNewConversationTidtle]=useState('');
     const handleSubmit = async () => {
        try {
-        const res = await fetch('http://localhost:5000/api/chat-titles', {
+        const res = await fetch('https://f-chatbot-backend.onrender.com/api/chat-titles', {
             method: 'POST',
             headers: {
               "Content-Type": "application/json",
